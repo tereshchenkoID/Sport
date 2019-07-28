@@ -1,0 +1,45 @@
+$title-color: (
+	'primary': $primary,
+	'fourth': $fourth,
+	'white': rgba(255,255,255,1)
+);
+$title-size: (
+	'1': 24px, 
+	'2': 20px,
+	'3': 18px,
+	'4': 16px,
+	'5': 16px,
+	'6': 16px
+);
+$title-weight: (
+	'light': 300, 
+	'regular': 400,
+	'medium': 500,
+	'bold': 700
+);
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6{
+	line-height: 1.2;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	@each $status, $text-color in $title-color{
+		&--#{$status}{
+			color: $text-color;
+		}
+	}
+	@each $status, $text-weight in $font-weight{
+		&--#{$status}{
+			font-weight: $text-weight;
+		}
+	}
+}
+@each $index, $status in $title-size{
+	.h#{$index}{
+		font-size: $status;
+	}
+}

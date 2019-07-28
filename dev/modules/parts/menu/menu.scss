@@ -1,0 +1,146 @@
+$menu:(
+	scroll: false,
+	padding: 0 10px,
+	color: #fff,
+	font-size: 12px,
+	font-weight: 500
+);
+
+.menu{
+	&--main{
+		margin-left: 10px;
+		width: 100%;
+		@include media-max(768){
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			transition: all .5s;
+			flex-direction: column;
+			justify-content: space-between;
+			transform: translateY(-200%);
+			margin-left: 0;
+		}
+	}
+	&--active{
+		@include media-max(768){
+			z-index: 9;
+			overflow-y: auto;
+			overflow-x: hidden;
+			transform: translateY(0);
+			height: calc(100vh - #{map-get($nav, height)});
+			background-color: rgba(0,0,0,0.7);
+			@if(map-get($menu, scroll) == true){
+				@include scroll(10px, #d4d4d4, 0, lighten(#000, 40%), 1px solid transparent);
+			}
+			@else{
+				@include scroll(0, rgba(255,255,255,0), 0, rgba(255,255,255,0), 0);
+			}
+			.menu__item{
+				margin: auto 0;
+			}
+		}
+	}
+	&--second{
+		flex-shrink: 0;
+	}
+	&__item{
+		padding: map-get($menu, padding);
+		cursor: pointer;
+		&--drop{
+			position: relative;
+			.link{
+				@include media-max(768){
+					text-align: center;
+				}
+				&:after{
+					content: '';
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+					background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='3' viewBox='0 0 8 3'%3E%3Cpath fill='none' fill-rule='nonzero' stroke='"+$fourth+"' stroke-linecap='round' stroke-linejoin='round' d='M1 0l3 3 3-3'/%3E%3C/svg%3E");
+					width: 8px;
+					height: 3px;
+					display: inline-block;
+					vertical-align: middle;
+					margin-left: 5px;
+					margin-top: -2px;
+				}
+				&:hover{
+					&:after{
+						background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='3' viewBox='0 0 8 3'%3E%3Cpath fill='none' fill-rule='nonzero' stroke='"+$primary+"' stroke-linecap='round' stroke-linejoin='round' d='M1 0l3 3 3-3'/%3E%3C/svg%3E");
+					}
+				}
+			}
+			&:hover{
+				.dropdown{
+					display: block;
+				}
+			}
+			.dropdown{
+				min-width: 50px;
+				display: none;
+				position: absolute;
+				left: 0;
+				top: 100%;
+				background-color: rgba(0,0,0,0.8);
+				z-index: 3;
+				@include media-max(768){
+					position: static;
+					margin-top: 10px;
+					background-color: rgba(0,0,0,0);
+				}
+				&__item{
+					padding: 5px 10px;
+					white-space: nowrap;
+					@include media-max(768){
+						text-align: center;
+					}
+				}
+				&__link{
+					&:hover{
+						color: $primary;
+					}
+				}
+			}
+		}
+		&--points{
+			&:hover{
+				span{
+					background-color: $primary;
+				}
+			}
+			span{
+				height: 4px;
+				width: 4px;
+				border-radius: 100%;
+				background-color: #fff;
+				margin: 0 2px;
+			}
+		}
+		&--search,
+		&--login{
+			height: 20px;
+			&:hover{
+				svg{
+					fill: $primary;
+				}
+			}
+			svg{
+				fill: #fff;
+			}
+		}
+		.link{
+			display: block;
+			position: relative;
+			color: map-get($menu, color);
+			font-size: map-get($menu, font-size);
+			font-weight: map-get($menu, font-weight);
+			white-space: nowrap;
+			&:hover,
+			&--active{
+				color: $primary;
+			}
+		}
+	}
+}

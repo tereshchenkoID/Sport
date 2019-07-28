@@ -1,0 +1,7 @@
+mixin breadcrumbs(value)
+	.breadcrumbs.flex.align-middle&attributes(attributes)
+		each item in value
+			if (item.link)
+				a.font.font--sm.breadcrumbs__item(href=item.link)= item.name
+			else
+				p.font.font--sm.breadcrumbs__item= item.name

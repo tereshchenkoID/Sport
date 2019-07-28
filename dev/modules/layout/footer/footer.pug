@@ -1,0 +1,110 @@
+mixin footer(item)
+	footer.footer&attributes(attributes)
+		.container-fluid
+			.container
+				.row.footer__menu
+					.col-12.col-md-4
+						p.font.font--md.font--white.subtitle Украина
+						.flex
+							.wrap
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Премьер-Лига
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Сборная Украины
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Первая лига
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Вторая лига
+							.wrap
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Аматорский футбол
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Футзал
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Кубок Украины
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Наши за границей
+					.col-12.col-md-4
+						p.font.font--md.font--white.subtitle Мир
+						.flex
+							.wrap
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Англии
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Испании
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Италии
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Франции
+							.wrap
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Германии
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат России
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Лига чемпионов
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Лига Европы
+					.col-12.col-md-4
+						.row
+							.col-6
+								p.font.font--md.font--white.subtitle Турниры
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Лига чемпионов
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Лига Европы
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Чемпионат Мира 2018
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Лига Наций
+							.col-6
+								p.font.font--md.font--white.subtitle Разное
+								ul.menu
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Рейтинг ФИФА
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Рейтинг УЕФА
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Рейтинг клубов
+									li.menu__item
+										a.font.font--sm.font--white.menu__link(href="#") Трансферы
+
+				.row.footer__submenu
+					.col-12.col-md-2
+						+social
+					.col-12.col-md-8
+						ul.menu.flex.align-center-middle.flex-wrap
+							li.menu__item 
+								a(href="#").font.font--sm.font--white.link О проекте
+							li.menu__item 
+								a(href="#").font.font--sm.font--white.link Реклама на сайте
+							li.menu__item 
+								a(href="#").font.font--sm.font--white.link RSS
+							li.menu__item 
+								a(href="#").font.font--sm.font--white.link Политика конфиденциальности
+					.col-12.col-md-2
+						.text-center
+							a(href="#").font.font--sm.font--medium.font--white.link.link-version
+				.row.footer__info
+					.col-12.col-md-8
+						+logo-2("/")
+						p.font.font--white.font--sm © UA-Футбол 2002-2019.
+							br
+							| Все права на материалы, находящиеся на сайте www.ua-football.com, охраняются в соответствии с
+							br 
+							| законодательством Украины.
+							br
+							| Материалы сайта предназначены для лиц старше 18 лет (18+).
+							br
+							| Пишите нам: 
+							a(href="#").font--white.link info@ua-football.com
+					.col-12.col-md-4
+						p.font.font--white.font--md.sm-hidden Наша апликуха на сторах:
+						.flex.align-middle.links-app
+							a(href="#").link-download.link-download--app-store
+							a(href="#").link-download.link-download--goole-play

@@ -1,0 +1,21 @@
+$nav:(
+	background-color: rgba(0,0,0,1),
+	height: 50px
+);
+
+.nav{
+	width: 100%;
+	height: map-get($nav, height);
+	position: relative;
+	.container{
+		background-color: map-get($nav, background-color);
+	}
+	[class*="container"]{
+		&:not(.menu){
+			height: inherit;
+		}
+		& > .flex{
+			height: inherit;
+		}
+	}
+}

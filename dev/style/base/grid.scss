@@ -1,0 +1,45 @@
+$grid-padding: $base-grid-padding;
+$grid-margin: $base-grid-margin;
+$count-column: $base-grid-column;
+$count-width: 100 / $count-column;
+$brackpoints: (
+	'sm': 577px,
+	'md': 769px,
+	'lg': 993px,
+	'xl': 1201px
+);
+.row{
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -$base-grid-padding;
+	margin-right: -$base-grid-padding;
+}
+[class^="col-"]{
+	padding:{
+		left: $grid-padding;
+		right: $grid-padding;
+	}
+}
+.col{
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+	@for $i from 1 through $count-column{
+		&-#{$i}{
+			max-width: ($i * $count-width) * 1%;
+			flex: 0 0 ($i * $count-width) * 1%;
+		}
+	}
+}
+@each $status, $brackpoints-size in $brackpoints{
+	@media (min-width: $brackpoints-size){
+		.col-#{$status}{
+			@for $i from 1 through $count-column{
+				&-#{$i}{
+					max-width: ($i * $count-width) * 1%;
+					flex: 0 0 ($i * $count-width) * 1%;
+				}
+			}
+		}
+	}
+}

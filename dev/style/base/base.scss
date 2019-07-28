@@ -1,0 +1,73 @@
+body{
+	display: flex;
+	flex-direction: column;
+	min-width: $max-width;
+	overflow-x: auto;
+	@include media-max(768){
+		min-width: $min-width;
+		max-width: $max-width;
+		overflow-x: hidden;
+	}
+}
+
+.container-fluid,
+.container,
+.section,
+.main {
+	width: 100%;
+	margin: {
+		right: auto;
+		left: auto;
+	}
+}
+.container {
+	padding: 0 15px;
+	max-width: $max-width;
+	@include media-max(768){
+		min-width: $min-width;
+		max-width: $max-width;
+	}
+}
+
+.main {
+	flex: 1;
+	& > .container{
+		background-color: #fff;
+	}
+	.content{
+		max-width: calc(100% - 300px);
+		padding-right: 20px;
+		@include media-max(768){
+			width: 100%;
+			max-width: 100%;
+			padding-right: 0;
+		}
+	}
+}
+
+
+.time{
+	margin-right: 10px;
+}
+.link{
+	display: inline;
+	&:hover{
+		color: $primary;
+	}
+}
+.comments{
+	display: inline;
+	margin-left: 10px;
+	white-space: nowrap;
+	padding-left: 14px;
+	background-repeat: no-repeat;
+	background-position: 0 50%;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill='none' fill-rule='nonzero' stroke='%23076EE7' d='M7.134 9.155L7.41 7.5H9a.5.5 0 0 0 .5-.5V1A.5.5 0 0 0 9 .5H1a.5.5 0 0 0-.5.5v6a.5.5 0 0 0 .5.5h3.651l2.483 1.655z'/%3E%3C/svg%3E%0A");
+}
+.event-date{
+	min-height: 35px;
+	background-color: rgba(252,252,252,1);
+	border: 1px solid $second;
+	border-radius: 5px;
+	overflow: hidden;
+}

@@ -1,0 +1,59 @@
+extends ../template/template.pug
+block content
+	+header
+	main.main
+		.container.padding
+			-var breadcrumbs = [{link: "/", name: "UA-Футбол"}, {name: "Англия. Премьер Лига"}];
+			+breadcrumbs(breadcrumbs)
+		.container.padding
+			.inplay.sm-hidden
+				+inplay
+				+inplay
+				+inplay
+				+inplay-2
+				+inplay.inplay__item--active
+				+inplay-3.inplay__item--empty
+				+inplay
+				+inplay
+				+inplay
+				+inplay-2
+				+inplay.inplay__item--active
+				+inplay-3.inplay__item--empty
+		.container
+			.flex.flex-wrap
+				.content
+					.carousel
+						+carousel
+						+carousel
+						+carousel
+						+carousel
+						+carousel
+					.articles
+						+article("1")
+						.event-date.flex.align-center-middle
+							p.font.font--sm.font--medium.font--fourth Вчера, 11 сентября 2018, среда
+						+article("2")
+					button.button.button--primary Загрузить еще
+					+pagination
+				aside.aside
+						.news
+							.news__header
+								h2.h2.h2--white Новости футбола
+							.news__tape
+								+news-big
+
+								- var news = [{time: "21:50", league: "Бундеслига", link: "Наше класико, наша женская судейская бригада, ФК Карпаты остались без всех своих фанатов", comment: "4 349"}];
+								+news(news)
+
+								- var news = [{time: "21:50", league: "Евро 2020", link: "Наше класико, наша женская судейская бригада, ФК Карпаты остались без всех своих фанатов", comment: "534"}];
+								+news(news)
+
+								- var news = [{time: "21:50", league: "Лига Чемпионов", link: "Карпаты разгромили Тернополь Ниву во Львове 7:0", comment: "3 009"}];
+								+news(news)
+
+								- var news = [{time: "21:50", league: "Бундеслига", link: "Наше класико, наша женская судейская бригада, ФК Карпаты остались без всех своих фанатов", comment: "4 349"}];
+								+news(news)
+							.news__footer
+								.text-center
+									a.font.font--primary.font--sm(href="#") Все новости
+	+footer

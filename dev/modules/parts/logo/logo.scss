@@ -1,0 +1,15 @@
+$logo:(
+	width: 70px
+);
+
+.logo{
+	flex-shrink: 0;
+	@include media-max(768){
+		margin-left: 30px;
+		margin-right: auto;
+	}
+	img{
+		display: block;
+		max-width: map-get($logo, width);
+	}
+}

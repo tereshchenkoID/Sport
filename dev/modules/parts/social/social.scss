@@ -1,0 +1,39 @@
+.social{
+	@include media-max(768){
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+	&__item{
+		height: 18px;
+		width: 18px;
+		margin-right: 15px;
+		@include media-max(768){
+			height: 30px;
+			width: 30px;
+			margin: 0 20px;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+	&__link{
+		display: block;
+		height: 100%;
+		width: 100%;
+		background-size: contain;
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		&--facebook{
+			background-image: url('../img/footer/img/facebook.png');
+		}
+		&--youtube{
+			background-image: url('../img/footer/img/youtube.png');
+		}
+		&--twitter{
+			background-image: url('../img/footer/img/twitter.png');
+		}
+		&--google{
+			background-image: url('../img/footer/img/google.png');
+		}
+	}
+}

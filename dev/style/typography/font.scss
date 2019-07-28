@@ -1,0 +1,40 @@
+$font-color: (
+	'primary': $primary,
+	'fourth': $fourth,
+	'fifth': $fifth,
+	'white': rgba(255,255,255,1)
+);
+
+$font-size: (
+	'sm': 12px, 
+	'md': 16px, 
+	'lg': 18px
+);
+$font-weight: (
+	'light': 300, 
+	'regular': 400,
+	'medium': 500,
+	'bold': 700
+);
+.font{
+	color: $base-font-color;
+	line-height: $base-font-line-height;
+	font-size: $base-font-size;
+	font-family: $base-font-family;
+	font-weight: $base-font-weight;
+	@each $status, $text-color in $font-color{
+		&--#{$status}{
+			color: $text-color;
+		}
+	}
+	@each $status, $text-weight in $font-weight{
+		&--#{$status}{
+			font-weight: $text-weight;
+		}
+	}
+	@each $status, $text-size in $font-size{
+		&--#{$status}{
+			font-size: $text-size;
+		}
+	}
+}

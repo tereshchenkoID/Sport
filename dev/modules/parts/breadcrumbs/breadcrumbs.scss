@@ -1,0 +1,39 @@
+$breadcrumbs:(
+	padding: 5px 20px,
+	color: rgba(154,156,175,1),
+	background-color: rgba(248,248,248,1)
+);
+
+.breadcrumbs{
+	padding: map-get($breadcrumbs, padding);
+	background-color: map-get($breadcrumbs, background-color);
+	&__item{
+		margin-right: 20px;
+		position: relative;
+		color: map-get($breadcrumbs, color);
+		&:hover,
+		&--active{
+			&:not(:last-child){
+				color: $primary;
+			}
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+		&:not(:last-child){
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				right: -12px;
+				top: 50%;
+				width: 6px;
+				height: 6px;
+				border-top: 1px solid #939393;
+				border-right: 1px solid #939393;
+				transform: rotate(45deg);
+				margin-top: -3px;
+			}
+		}
+	}
+}

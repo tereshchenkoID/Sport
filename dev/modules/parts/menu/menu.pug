@@ -1,0 +1,42 @@
+mixin menu
+	- var menu = [{name: "Украина", link:"", drop:true},{name: "Страны", link:"",drop:true},{name: "Турныры", link:"",drop:true},{name: "Прогнозы", link:"/"},{name: "Матч Центр", link:"/"},{name: "Видео", link:"/"}, {name: "Lifestyle", link:"/"}, {name: "Рейтинги", link:"/"}, {name: "Спорт", link:"/"}, {name: "ТВ", link:"/"}];
+	ul.menu.menu--main&attributes(attributes)
+		each item in menu
+			if(item.drop)
+				li.menu__item.menu__item--drop
+					a.font.text-uppercase.link= item.name
+					ul.dropdown
+						li.dropdown__item
+							a.font.font--white.font--sm.dropdown__link Премьер-Лига
+						li.dropdown__item
+							a.font.font--white.font--sm.dropdown__link Сборная Украины
+						li.dropdown__item
+							a.font.font--white.font--sm.dropdown__link Первая лига
+						li.dropdown__item
+							a.font.font--white.font--sm.dropdown__link Вторая лига
+			else
+				li.menu__item
+					a.font.text-uppercase.link(href=item.link)= item.name
+		li.menu__item.menu__item--points.flex.align-middle.align-justify
+			span
+			span
+			span
+
+
+mixin menu2
+	ul.menu.menu--second&attributes(attributes)
+		li.menu__item.menu__item--search
+			svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='16px', height='16px')
+				path(d='M10.711,10.063 L11.437,10.063 L16.000,14.637 L14.636,16.001 L10.064,11.435 L10.064,10.710 L9.811,10.460 C8.771,11.351 7.424,11.892 5.946,11.892 C2.662,11.892 -0.000,9.230 -0.000,5.946 C-0.000,2.662 2.662,-0.000 5.946,-0.000 C9.230,-0.000 11.892,2.662 11.892,5.946 C11.892,7.423 11.350,8.772 10.458,9.812 L10.711,10.063 ZM5.946,1.829 C3.672,1.829 1.830,3.672 1.830,5.946 C1.830,8.220 3.672,10.063 5.946,10.063 C8.220,10.063 10.063,8.220 10.063,5.946 C10.063,3.672 8.220,1.829 5.946,1.829 Z')
+		li.menu__item.menu__item--login
+			svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='20px', height='20px')
+				path(d='M10.000,20.000 C4.480,20.000 -0.000,15.520 -0.000,10.000 C-0.000,4.480 4.480,-0.000 10.000,-0.000 C15.520,-0.000 20.000,4.480 20.000,10.000 C20.000,15.520 15.520,20.000 10.000,20.000 ZM10.000,3.000 C8.340,3.000 7.000,4.340 7.000,5.999 C7.000,7.660 8.340,9.000 10.000,9.000 C11.660,9.000 13.000,7.660 13.000,5.999 C13.000,4.340 11.660,3.000 10.000,3.000 ZM10.000,10.900 C8.000,10.900 4.030,11.990 4.000,13.979 C5.290,15.919 7.500,17.200 10.000,17.200 C12.500,17.200 14.710,15.919 16.000,13.979 C15.970,11.990 11.990,10.900 10.000,10.900 Z')
+		li.menu__item.menu__item--drop.menu__item--lang.sm-hidden
+			a.font.link Рус
+			ul.dropdown
+				li.dropdown__item
+					a.font.font--white.font--sm.dropdown__link EN
+				li.dropdown__item
+					a.font.font--white.font--sm.dropdown__link UA
+				li.dropdown__item
+					a.font.font--white.font--sm.dropdown__link FR

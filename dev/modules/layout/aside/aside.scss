@@ -1,0 +1,9 @@
+.aside{
+	min-width: 300px;
+	max-width: 300px;
+	@include media-max(768){
+		min-width: 100%;
+		max-width: 100%;
+		margin-bottom: 15px;
+	}
+}

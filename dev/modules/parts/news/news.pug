@@ -1,0 +1,18 @@
+mixin news(value)
+	.news__item&attributes(attributes)
+		each item in value
+			.flex.align-middle.flex-wrap
+				p.font.font--sm.font--fourth.time= item.time
+				p.font.font--sm.font--fourth.league= item.league
+			a.font.font--white.font--medium.link(href="#")= item.link
+			a.font.font--sm.font--fourth.comments(href="#2")= item.comment
+
+mixin news-big
+	.news__item.news__item--big&attributes(attributes)
+		img(src="./img/news/img/news-1.png", alt="")
+		.wrap
+			.flex.align-middle.flex-wrap
+				p.font.font--sm.font--fourth.time 20:45
+				p.font.font--sm.font--fourth.league Золотой мяч
+			a.font.font--white.font--medium.link(href="#") Кардифф Сити не будет перечислять Нанту всю сумму за трансфер погибшего Сала
+			a.font.font--sm.font--fourth.comments(href="#2") 3009

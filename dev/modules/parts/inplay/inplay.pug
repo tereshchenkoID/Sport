@@ -1,0 +1,59 @@
+mixin inplay
+	.inplay__item&attributes(attributes)
+		.flex.align-middle.align-justify.wrap
+			p.font.font--sm.font--fourth.text-uppercase СЕГОДНЯ  12:00
+			.text-center
+				p.font.font--sm.font--fourth.text-uppercase.live
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/psg.png", alt="")
+				p.font.text-ellipsis Пари Сен-Жармен
+			.text-center
+				p.font.font--medium.font--lg 4
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/barsa.png", alt="")
+				p.font.text-ellipsis Барселона
+			.text-center
+				p.font.font--medium.font--lg 0
+
+mixin inplay-2
+	.inplay__item&attributes(attributes)
+		.flex.align-middle.align-justify.wrap
+			p.font.font--sm.font--third.text-uppercase СЕГОДНЯ  12:00
+			.text-center
+				p.font.font--sm.font--fourth.text-uppercase.live
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/psg.png", alt="")
+				p.font.text-ellipsis Пари Сен-Жармен
+			.text-center
+				p.font.font--medium.font--lg 4
+					span.font.font--fourth.penalty (5)
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/barsa.png", alt="")
+				p.font.text-ellipsis Барселона
+			.text-center
+				p.font.font--medium.font--lg 0
+					span.font.font--fourth.penalty (4)
+
+
+mixin inplay-3
+	.inplay__item&attributes(attributes)
+		.flex.align-middle.align-justify.wrap
+			p.font.font--sm.font--fourth.text-uppercase СЕГОДНЯ  12:00
+			.text-center
+				p.font.font--sm.font--fourth.text-uppercase.live
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/psg.png", alt="")
+				p.font.text-ellipsis Пари Сен-Жармен
+			.text-center
+				p.font.font--medium.font--lg -
+		.flex.align-middle.align-justify.wrap
+			.flex.align-middle
+				img(src="./img/inplay/img/barsa.png", alt="")
+				p.font.text-ellipsis Барселона
+			.text-center
+				p.font.font--medium.font--lg -
